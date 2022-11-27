@@ -7,6 +7,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class DemoUtilsTest {
 
     DemoUtils demoUtils;
@@ -17,6 +18,7 @@ class DemoUtilsTest {
     }
 
     @DisplayName("Equals and Not Equals")
+    @Order(3)
     @Test
     void testEqualsAndNotEquals() {
 
@@ -30,6 +32,7 @@ class DemoUtilsTest {
     }
 
     @DisplayName("Null and Not Null")
+    @Order(1)
     @Test
     void testNullAndNotNull() {
 
@@ -41,6 +44,7 @@ class DemoUtilsTest {
     }
 
     @DisplayName("Same and Not Same")
+    @Order(-7)
     @Test
     void testSameAndNotSame() {
 
