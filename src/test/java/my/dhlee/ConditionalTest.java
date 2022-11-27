@@ -2,8 +2,7 @@ package my.dhlee;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.condition.EnabledOnOs;
-import org.junit.jupiter.api.condition.OS;
+import org.junit.jupiter.api.condition.*;
 
 class ConditionalTest {
 
@@ -28,6 +27,30 @@ class ConditionalTest {
     @Test
     @EnabledOnOs({OS.MAC, OS.WINDOWS})
     void testForMacAndWindowsOnly() {
+        // execute method and perform asserts
+    }
+
+    @Test
+    @EnabledOnJre(JRE.JAVA_11)
+    void testOnlyForJava11() {
+        // execute method and perform asserts
+    }
+
+    @Test
+    @EnabledOnJre(JRE.JAVA_17)
+    void testOnlyForJava17() {
+        // execute method and perform asserts
+    }
+
+    @Test
+    @EnabledForJreRange(min = JRE.JAVA_11, max = JRE.JAVA_17)
+    void testOnlyForJavaRange() {
+        // execute method and perform asserts
+    }
+
+    @Test
+    @EnabledForJreRange(min = JRE.JAVA_11)
+    void testOnlyForJavaRangeMin() {
         // execute method and perform asserts
     }
 }
