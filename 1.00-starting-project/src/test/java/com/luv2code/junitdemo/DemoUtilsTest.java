@@ -13,8 +13,8 @@ class DemoUtilsTest {
         demoUtils = new DemoUtils();
     }
 
-    @Test
     @DisplayName("Equals and Not Equals")
+    @Test
     void testEqualsAndNotEquals() {
 
         int expected = 6;
@@ -26,8 +26,8 @@ class DemoUtilsTest {
         assertNotEquals(unexpected, actual, "2 + 4 != 8");
     }
 
-    @Test
     @DisplayName("Null and Not Null")
+    @Test
     void testNullAndNotNull() {
 
         String str1 = null;
