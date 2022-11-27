@@ -30,6 +30,7 @@ class DemoUtilsTest {
     }
 
     @Test
+    @DisplayName("Equals and Not Equals")
     void testEqualsAndNotEquals() {
 
         System.out.println("Running test: testEqualsAndNotEquals");
@@ -44,6 +45,7 @@ class DemoUtilsTest {
     }
 
     @Test
+    @DisplayName("Null and Not Null")
     void testNullAndNotNull() {
 
         System.out.println("Running test: testNullAndNotNull");
