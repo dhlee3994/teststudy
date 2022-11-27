@@ -1,4 +1,4 @@
-package my.dhlee;
+package my.dhlee.junitdemo;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;

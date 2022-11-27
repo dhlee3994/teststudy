@@ -1,4 +1,4 @@
-package my.dhlee;
+package my.dhlee.junitdemo;
 
 import java.util.List;
 
