@@ -1,6 +1,12 @@
 package my.dhlee.tdd;
 
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.CsvFileSource;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -49,5 +55,36 @@ class FizzBuzzTest {
         String expected = "1";
 
         assertEquals(expected, FizzBuzz.compute(1), "Should return 1");
+    }
+
+    @DisplayName("Loop over array")
+    @ParameterizedTest(name = "value={0}, expected={1}")
+    @MethodSource("provideFizzBuzzLoopOverArray")
+    @Order(5)
+    void testLoopOverArray(int value, String expected) {
+        assertEquals(expected, FizzBuzz.compute(value));
+    }
+
+    private static Stream<Arguments> provideFizzBuzzLoopOverArray() {
+        return Stream.of(
+            Arguments.of(1, "1"),
+            Arguments.of(2, "2"),
+            Arguments.of(3, "Fizz"),
+            Arguments.of(4, "4"),
+            Arguments.of(5, "Buzz"),
+            Arguments.of(15, "FizzBuzz"),
+            Arguments.of(18, "Fizz"),
+            Arguments.of(90, "FizzBuzz"),
+            Arguments.of(100, "Buzz")
+        );
+    }
+
+
+    @DisplayName("Loop over array by CSV")
+    @ParameterizedTest(name = "value={0}, expected={1}")
+    @CsvFileSource(resources = "/large-test-data.csv")
+    @Order(6)
+    void testLoopOverArrayByCSV(int value, String expected) {
+        assertEquals(expected, FizzBuzz.compute(value));
     }
 }
