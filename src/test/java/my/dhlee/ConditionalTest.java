@@ -53,4 +53,16 @@ class ConditionalTest {
     void testOnlyForJavaRangeMin() {
         // execute method and perform asserts
     }
+
+    @Test
+    @EnabledIfEnvironmentVariable(named = "DHLEE_DEV", matches = "DEV")
+    void testOnlyForDevEnvironment() {
+        // execute method and perform asserts
+    }
+
+    @Test
+    @EnabledIfSystemProperty(named = "DHLEE_SYS_PROP", matches = "CI_CD_DEPLOY")
+    void testOnlyForSystemProperty() {
+        // execute method and perform asserts
+    }
 }
